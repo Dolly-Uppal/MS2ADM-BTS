@@ -112,7 +112,7 @@ class BraTSTrainer(Trainer):
         label = batch["label"]
        
         label = label.float()
-        #print(image.device,label.device)
+       
         return image, label 
 
     def validation_step(self, batch):
