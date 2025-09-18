@@ -1,13 +1,3 @@
-# Copyright 2020 - 2022 MONAI Consortium
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#     http://www.apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 from sklearn.model_selection import KFold  
 
 import os
@@ -110,7 +100,7 @@ class PretrainDataset(Dataset):
                 image = self.read_data(self.datalist[i])
             except:
                 with open("./bugs.txt", "a+") as f:
-                    f.write(f"数据读取出现问题，{self.datalist[i]}\n")
+                    f.write(f"data，{self.datalist[i]}\n")
                 if i != len(self.datalist)-1:
                     return self.__getitem__(i+1)
                 else :
@@ -125,7 +115,7 @@ class PretrainDataset(Dataset):
 
 def get_kfold_data(data_paths, n_splits, shuffle=False):
     X = np.arange(len(data_paths))
-    kfold = KFold(n_splits=n_splits, shuffle=shuffle)  ## kfold为KFolf类的一个对象
+    kfold = KFold(n_splits=n_splits, shuffle=shuffle)  
     return_res = []
     for a, b in kfold.split(X):
         fold_train = []
