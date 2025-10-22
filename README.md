@@ -14,5 +14,5 @@
 3) inference using the trained model...........python test.py
 4) compute the metrics......... python metric.py
    
-**This repository is for paper "MS2ADM-BTS" and it has been accepted in Pattern ReCognition Letters**.
+**This repository is for paper "MS2ADM-BTS" and it has been accepted in Pattern Recognition Letters**.
 
